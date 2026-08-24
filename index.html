@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C. Abdul Hakeem College of Engineering & Technology</title>
+
+    <!-- Google Fonts (Merriweather for CAHCET, Montserrat for Navigation & Headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER & NAVBAR ================= -->
+    <header class="header">
+        <div class="header-container">
+
+            <!-- College Logo & Name -->
+            <a href="index.html" class="brand" title="C. Abdul Hakeem College of Engineering &amp; Technology">
+                <div class="brand-logo">
+                    <img src="college-logo-ictata (1).png" alt="CAHCET Logo">
+                </div>
+                <span class="brand-name">CAHCET</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-btn" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Main Navigation -->
+            <nav class="navbar" id="navbar">
+                <!-- Close Button for Side Navbar -->
+                <button class="close-nav-btn" id="closeNavBtn" aria-label="Close Navigation">&times;</button>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">ABOUT</a>
+                        <ul class="dropdown">
+                            <li><a href="#about-cahcet">About CAHCET</a></li>
+                            <li><a href="#vision-mission">Vision &amp; Mission</a></li>
+                            <li><a href="#governing-council">Governing Council</a></li>
+                            <li><a href="#principals-desk">Principal's Desk</a></li>
+                            <li><a href="#approvals">Approvals &amp; Accreditations</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#departments" class="nav-link">DEPARTMENTS</a>
+                        <ul class="dropdown">
+                            <li><a href="#dept-aids">B.Tech - Artificial Intelligence &amp; Data Science</a></li>
+                            <li><a href="#dept-cse">B.E. - Computer Science &amp; Engineering</a></li>
+                            <li><a href="#dept-it">B.Tech - Information Technology</a></li>
+                            <li><a href="#dept-ece">B.E. - Electronics &amp; Communication Engg.</a></li>
+                            <li><a href="#dept-eee">B.E. - Electrical &amp; Electronics Engg.</a></li>
+                            <li><a href="#dept-mech">B.E. - Mechanical Engineering</a></li>
+                            <li><a href="#dept-civil">B.E. - Civil Engineering</a></li>
+                            <li><a href="#dept-mba">Master of Business Administration (MBA)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#academics" class="nav-link">ACADEMICS</a>
+                        <ul class="dropdown">
+                            <li><a href="#programs">Programs Offered</a></li>
+                            <li><a href="#curriculum">Curriculum &amp; Syllabus</a></li>
+                            <li><a href="#calendar">Academic Calendar</a></li>
+                            <li><a href="#exam-cell">Examination Cell</a></li>
+                            <li><a href="#library">Central Library</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#admissions" class="nav-link">ADMISSIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#placements" class="nav-link">PLACEMENTS</a>
+                        <ul class="dropdown">
+                            <li><a href="#placement-cell">Training &amp; Placement Cell</a></li>
+                            <li><a href="#recruiters">Top Recruiters</a></li>
+                            <li><a href="#placement-records">Placement Records</a></li>
+                            <li><a href="#internships">Internships</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#research" class="nav-link">RESEARCH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">CONTACT US</a>
+                    </li>
+                </ul>
+
+                <!-- Search Button -->
+                <button class="search-btn" id="searchBtn" title="Search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT WRAPPER ================= -->
+    <main id="main-content">
+
+        <!-- ================= HERO SECTION ================= -->
+        <section class="hero" id="home">
+
+            <!-- Background Media (Video Background) -->
+            <div class="hero-media">
+                <video class="hero-video" autoplay muted loop playsinline poster="cahcet.webp">
+                    <source src="assets/hero sec video.mp4" type="video/mp4">
+                    <source src="assets/hero%20sec%20video.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+
+            <!-- Lower-Left College Full Form on Video -->
+            <div class="hero-content">
+                <div class="hero-brand-lockup">
+                    <span class="hero-acronym">CAHCET</span>
+                    <hr class="hero-divider">
+                    <h1 class="hero-title">
+                        C. ABDUL HAKEEM COLLEGE OF <br>
+                        <span>ENGINEERING &amp; TECHNOLOGY</span>
+                    </h1>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= ABOUT SECTION ================= -->
+        <section class="about-section" id="about">
+            <!-- Decorative Dot Pattern (Top Left Only) -->
+            <!-- <div class="about-dot-pattern dot-top-left" aria-hidden="true"></div> -->
+
+            <div class="about-container">
+
+                <!-- Main Content & Image Grid -->
+                <div class="about-grid">
+
+                    <!-- Left Column: Single-line Heading, Description, Accreditations -->
+                    <div class="about-left-col">
+                        <div class="about-heading-block">
+                            <span class="about-eyebrow">ABOUT OUR INSTITUTION</span>
+                            <h2 class="about-title-main"><span class="about-title-why">Why</span> CAHCET?</h2>
+                            <div class="about-title-bar"></div>
+                        </div>
+
+                        <p class="about-body-text">
+                            A well-established College of Engineering, it is a preferred destination for aspiring
+                            students
+                            seeking quality education and academic excellence. Since its inception, it has consistently
+                            produced first-class graduates, distinction holders, and university rank achievers.
+                        </p>
+
+                        <!-- Key Institutional Highlights -->
+                        <div class="about-highlights-pills">
+                            <div class="highlight-pill">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Anna University Affiliated</span>
+                            </div>
+                            <div class="highlight-pill">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>AICTE Approved</span>
+                            </div>
+                            <div class="highlight-pill">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>33-Acre Green Campus</span>
+                            </div>
+                        </div>
+
+                        <!-- Accreditation Badge Cards -->
+                        <div class="about-accreditations-row">
+                            <div class="accred-badge-card">
+                                <div class="accred-logo-wrapper">
+                                    <img src="assets/National_Board_of_Accreditation.svg.webp"
+                                        alt="NBA - National Board of Accreditation" class="accred-img-nba">
+                                </div>
+                                <div class="accred-badge-info">
+                                    <span class="accred-badge-title">NBA Accredited</span>
+                                    <span class="accred-badge-sub">Quality Education</span>
+                                </div>
+                            </div>
+
+                            <div class="accred-badge-card">
+                                <div class="accred-logo-wrapper">
+                                    <img src="assets/tuv.jpeg" alt="TÜV SÜD ISO 21001 Certification"
+                                        class="accred-img-tuv">
+                                </div>
+                                <div class="accred-badge-info">
+                                    <span class="accred-badge-title">TÜV SÜD Certified</span>
+                                    <span class="accred-badge-sub">ISO 21001 Standard</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Prominent College Building Image -->
+                    <div class="about-right-col">
+                        <div class="about-building-frame">
+                            <img src="assets/hero-img.jpeg"
+                                alt="C. Abdul Hakeem College of Engineering &amp; Technology Campus Building"
+                                class="about-building-img">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Navy Strip -->
+            <div class="about-bottom-bar" aria-hidden="true"></div>
+        </section>
+
+        <!-- ================= OUR RECRUITERS SECTION ================= -->
+        <section class="recruiters-section" id="placements">
+            <div class="recruiters-container">
+
+                <!-- Section Header -->
+                <div class="recruiters-header">
+                    <h2 class="recruiters-heading">Our <span class="recruiters-highlight">Recruiters</span></h2>
+                    <div class="recruiters-gold-bar"></div>
+                    <p class="recruiters-description">
+                        We are proud to have leading companies visit our campus and provide exciting career
+                        opportunities to
+                        our students.
+                    </p>
+                </div>
+
+                <!-- Recruiter Logo Marquee -->
+                <div class="recruiters-marquee-wrapper" aria-label="Recruiter companies marquee">
+                    <div class="recruiters-track">
+
+                        <!-- Set 1 -->
+                        <div class="recruiter-card">
+                            <img src="assets/r1.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card">
+                            <img src="assets/r2.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card">
+                            <img src="assets/r3.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card">
+                            <img src="assets/r4.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card">
+                            <img src="assets/r5.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card">
+                            <img src="assets/r6.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card">
+                            <img src="assets/r7.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card">
+                            <img src="assets/r8.png" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+
+                        <!-- Set 2 (Exact duplicate for seamless infinite loop) -->
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r1.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r2.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r3.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r4.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r5.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r6.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r7.jpeg" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+                        <div class="recruiter-card" aria-hidden="true">
+                            <img src="assets/r8.png" alt="Recruiter Partner" class="recruiter-logo">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PEOPLE'S MESSAGES / TESTIMONIALS SECTION ================= -->
+        <section class="messages-section" id="messages">
+            <div class="messages-container">
+
+                <!-- Section Header -->
+                <div class="messages-header">
+                    <span class="messages-eyebrow">VOICES OF CAHCET</span>
+                    <h2 class="messages-heading">Messages &amp; <span class="messages-highlight">Testimonials</span>
+                    </h2>
+                    <div class="messages-gold-bar"></div>
+                </div>
+
+                <!-- 3-Card Carousel Wrapper -->
+                <div class="messages-slider-wrapper">
+
+                    <!-- Left Navigation Arrow -->
+                    <button class="slider-arrow prev-arrow" id="msgPrevBtn" aria-label="Previous Testimonials">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <!-- Carousel Viewport -->
+                    <div class="messages-carousel-viewport">
+                        <div class="messages-track" id="msgTrack">
+
+                            <!-- Card 1: Chairman (t3) -->
+                            <div class="testimonial-card">
+                                <div class="testi-card-header">
+                                    <div class="testi-portrait-frame">
+                                        <img src="assets/t3.webp" alt="Dr. S. Ziauddin Ahmed"
+                                            class="testi-portrait-img">
+                                    </div>
+                                    <h3 class="testi-author-name">Dr. S. Ziauddin Ahmed, B.A.</h3>
+                                    <span class="testi-author-role">Chairman</span>
+                                    <hr class="testi-divider">
+                                </div>
+                                <div class="testi-card-body">
+                                    <p class="testi-quote-text">
+                                        “C. Abdul Hakeem College of Engineering and Technology (CAHCET), established in
+                                        1919, is committed to providing quality engineering education and preparing
+                                        students for successful careers. With ISO Certification and NBA accreditation,
+                                        CAHCET focuses on practical, job-oriented education, creative thinking, critical
+                                        thinking, and overall student development.”
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Correspondent (t4) -->
+                            <div class="testimonial-card">
+                                <div class="testi-card-header">
+                                    <div class="testi-portrait-frame">
+                                        <img src="assets/t4.jpg" alt="V. Mohamed Rizwanullah"
+                                            class="testi-portrait-img">
+                                    </div>
+                                    <h3 class="testi-author-name">V. Mohamed Rizwanullah, M.B.A.</h3>
+                                    <span class="testi-author-role">Correspondent</span>
+                                    <hr class="testi-divider">
+                                </div>
+                                <div class="testi-card-body">
+                                    <p class="testi-quote-text">
+                                        “CAHCET believes that education inspires creativity, critical thinking, and
+                                        prepares students for a promising future. With ISO Certification and NBA
+                                        accreditation, the institution is committed to providing high-quality,
+                                        industry-relevant engineering education. Students are trained with strong values
+                                        of sincerity, discipline, hard work, and integrity.”
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: Principal (t5) -->
+                            <div class="testimonial-card">
+                                <div class="testi-card-header">
+                                    <div class="testi-portrait-frame">
+                                        <img src="assets/t5.webp" alt="Dr. M. Sasikumar" class="testi-portrait-img">
+                                    </div>
+                                    <h3 class="testi-author-name">Dr. M. Sasikumar</h3>
+                                    <span class="testi-author-role">Principal</span>
+                                    <hr class="testi-divider">
+                                </div>
+                                <div class="testi-card-body">
+                                    <p class="testi-quote-text">
+                                        “Education transforms our thoughts, values, and actions. At CAHCET, we aim to
+                                        nurture skilled technocrats with professional competence, soft skills, human
+                                        values, and ethics. We strive to provide holistic education that encourages
+                                        innovation and broadens students’ horizons.”
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card 4: Alumni 1 (t1) -->
+                            <div class="testimonial-card">
+                                <div class="testi-card-header">
+                                    <div class="testi-portrait-frame">
+                                        <img src="assets/t1.webp" alt="Gori Mohammed" class="testi-portrait-img">
+                                    </div>
+                                    <h3 class="testi-author-name">Gori Mohammed</h3>
+                                    <span class="testi-author-role">Alumni</span>
+                                    <hr class="testi-divider">
+                                </div>
+                                <div class="testi-card-body">
+                                    <p class="testi-quote-text">
+                                        “I respect and love my correspondent who shaped my life, became my inspiration,
+                                        reason for my growth and many other things. I wanted to receive my degree from
+                                        his hands but received in his presence. If he was not there, I wouldn’t have
+                                        completed my engineering. I thank Almighty for showing him in my life.”
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card 5: Alumni 2 (t2) -->
+                            <div class="testimonial-card">
+                                <div class="testi-card-header">
+                                    <div class="testi-portrait-frame">
+                                        <img src="assets/t2.webp" alt="Nadeem A" class="testi-portrait-img">
+                                    </div>
+                                    <h3 class="testi-author-name">Nadeem A</h3>
+                                    <span class="testi-author-role">Alumni</span>
+                                    <hr class="testi-divider">
+                                </div>
+                                <div class="testi-card-body">
+                                    <p class="testi-quote-text">
+                                        “Thanks for providing the opportunity for an average academic student to study
+                                        engineering degree. I’m sharing the same desk at work with students of top 10
+                                        colleges, consulting top clients in different geographies. In my view this is
+                                        the real achievement which CAHCET is achieving year on year.”
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Navigation Arrow -->
+                    <button class="slider-arrow next-arrow" id="msgNextBtn" aria-label="Next Testimonials">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+
+                </div>
+
+                <!-- Dots Indicator -->
+                <div class="messages-dots" id="msgDots">
+                    <button class="dot-btn active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="dot-btn" data-index="1" aria-label="Slide 2"></button>
+                    <button class="dot-btn" data-index="2" aria-label="Slide 3"></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CONTACT US SECTION ================= -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+
+                <!-- Section Header -->
+                <div class="contact-header">
+                    <span class="contact-eyebrow">GET IN TOUCH</span>
+                    <h2 class="contact-heading">Contact <span class="contact-highlight">Us</span></h2>
+                    <div class="contact-gold-bar"></div>
+                </div>
+
+                <!-- Two-Column Layout -->
+                <div class="contact-grid">
+
+                    <!-- Left Column: Contact Information -->
+                    <div class="contact-info-col">
+                        <h3 class="contact-info-title">C. Abdul Hakeem College of Engineering &amp; Technology</h3>
+                        <p class="contact-info-desc">
+                            Have questions about admissions, academic programs, or campus visits? Reach out to our
+                            administrative office.
+                        </p>
+
+                        <address class="contact-details">
+                            <!-- Address Item -->
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>Campus Address</strong>
+                                    <span>Hakeem Nagar, Melvisharam, Ranipet District, Tamil Nadu – 632509, India</span>
+                                </div>
+                            </div>
+
+                            <!-- Phone Item -->
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>Phone Numbers</strong>
+                                    <span>+91-4172-267387 / +91-4172-267387</span>
+                                </div>
+                            </div>
+
+                            <!-- Email Item -->
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>Email Address</strong>
+                                    <span>info.cahcet@gmail.com | principal@cahcet.edu.in</span>
+                                </div>
+                            </div>
+
+                            <!-- Office Hours Item -->
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>Office Hours</strong>
+                                    <span>Monday – Saturday: 8:45 AM – 4:30 PM</span>
+                                </div>
+                            </div>
+                        </address>
+                    </div>
+
+                    <!-- Right Column: Google Map -->
+                    <div class="contact-map-col">
+                        <div class="contact-map-wrapper">
+                            <iframe class="contact-map-iframe"
+                                src="https://www.google.com/maps?q=C.+Abdul+Hakeem+College+of+Engineering+%26+Technology&amp;z=14&amp;t=m&amp;hl=en&amp;output=embed"
+                                title="C. Abdul Hakeem College of Engineering &amp; Technology Location" loading="lazy"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+
+                <!-- Column 1: College Info -->
+                <div class="footer-col footer-col-about">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="college-logo-ictata (1).png" alt="CAHCET Logo">
+                        </div>
+                        <span class="footer-brand-name">CAHCET</span>
+                    </div>
+                    <h3 class="footer-college-title">C. Abdul Hakeem College of Engineering &amp; Technology</h3>
+                    <p class="footer-description">
+                        Committed to quality engineering education, innovation and academic excellence.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col footer-col-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#departments">Departments</a></li>
+                        <li><a href="#academics">Academics</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#placements">Placements</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Details -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <address class="footer-contact-details">
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="footer-contact-text">
+                                <strong>Campus Address</strong>
+                                <span>Hakeem Nagar, Melvisharam, Ranipet District, Tamil Nadu – 632509, India</span>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="footer-contact-text">
+                                <strong>Phone</strong>
+                                <span>+91-4172-267387 / +91-4172-267387</span>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="footer-contact-text">
+                                <strong>Email</strong>
+                                <span>info.cahcet@gmail.com | principal@cahcet.edu.in</span>
+                            </div>
+                        </div>
+                    </address>
+                </div>
+
+            </div>
+
+            <!-- Thin Divider & Bottom Copyright -->
+            <hr class="footer-divider">
+            <div class="footer-bottom-info">
+                <p class="footer-copyright">&copy; 2026 C. Abdul Hakeem College of Engineering &amp; Technology. All Rights Reserved.</p>
+                <p class="footer-subtext">Affiliated to Anna University | Approved by AICTE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= ADMISSIONS & CONTACT ENQUIRY MODAL ================= -->
+    <div class="modal-overlay" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modalTitle">Admissions Enquiry 2026–27</h3>
+                    <p class="modal-subtitle">C. Abdul Hakeem College of Engineering &amp; Technology</p>
+                </div>
+                <button class="close-modal" id="closeEnquiryModal" aria-label="Close Enquiry Modal">&times;</button>
+            </div>
+            <form id="enquiryForm" onsubmit="handleEnquirySubmit(event)">
+                <div class="form-group">
+                    <label for="name">Student Full Name <span class="req">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Enter student full name">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone / Mobile Number <span class="req">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter 10-digit number">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="course">Interested Program / Branch <span class="req">*</span></label>
+                    <select id="course" name="course" required>
+                        <option value="" disabled selected>-- Select Degree &amp; Branch --</option>
+                        <option value="AIDS">B.Tech - Artificial Intelligence &amp; Data Science</option>
+                        <option value="CSE">B.E. - Computer Science &amp; Engineering</option>
+                        <option value="IT">B.Tech - Information Technology</option>
+                        <option value="ECE">B.E. - Electronics &amp; Communication Engg.</option>
+                        <option value="EEE">B.E. - Electrical &amp; Electronics Engg.</option>
+                        <option value="MECH">B.E. - Mechanical Engineering</option>
+                        <option value="CIVIL">B.E. - Civil Engineering</option>
+                        <option value="MBA">MBA - Master of Business Administration</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Queries / Remarks (Optional)</label>
+                    <textarea id="message" name="message" rows="2"
+                        placeholder="Eligibility, scholarship, hostel, etc."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Submit Enquiry Form</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const closeNavBtn = document.getElementById('closeNavBtn');
+        const navbar = document.getElementById('navbar');
+        const enquiryModal = document.getElementById('enquiryModal');
+        const openEnquiryBtn = document.getElementById('openEnquiryBtn');
+        const closeEnquiryModal = document.getElementById('closeEnquiryModal');
+
+        // Mobile Menu Toggle (Open)
+        if (mobileToggle && navbar) {
+            mobileToggle.addEventListener('click', () => {
+                navbar.classList.add('open');
+            });
+        }
+
+        // Mobile Menu Close Button
+        if (closeNavBtn && navbar) {
+            closeNavBtn.addEventListener('click', () => {
+                navbar.classList.remove('open');
+            });
+        }
+
+        // Close Mobile Menu when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (navbar && navbar.classList.contains('open')) {
+                if (!navbar.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    navbar.classList.remove('open');
+                }
+            }
+        });
+
+        // Close Mobile Menu when clicking a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    navbar.classList.remove('open');
+                }
+            });
+        });
+
+        // Modal Open / Close
+        function openModal() {
+            if (enquiryModal) {
+                enquiryModal.classList.add('active');
+                const firstInput = enquiryModal.querySelector('input');
+                if (firstInput) firstInput.focus();
+            }
+        }
+
+        function closeModal() {
+            if (enquiryModal) {
+                enquiryModal.classList.remove('active');
+            }
+        }
+
+        // Bind admissions hash links to open the enquiry modal
+        document.querySelectorAll('a[href="#admissions"], .btn-admissions').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        if (closeEnquiryModal) {
+            closeEnquiryModal.addEventListener('click', () => {
+                closeModal();
+            });
+        }
+
+        if (enquiryModal) {
+            enquiryModal.addEventListener('click', (e) => {
+                if (e.target === enquiryModal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // Close modal on Escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && enquiryModal && enquiryModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        function handleEnquirySubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('enquiryForm');
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}! Your enquiry has been submitted successfully. The CAHCET admission office will contact you shortly.`);
+            closeModal();
+            if (form) form.reset();
+        }
+
+        // ================= PEOPLE'S MESSAGES 3-CARD CAROUSEL =================
+        let currentMsgIndex = 0;
+        const msgTrack = document.getElementById('msgTrack');
+        const msgPrevBtn = document.getElementById('msgPrevBtn');
+        const msgNextBtn = document.getElementById('msgNextBtn');
+        const msgDots = document.getElementById('msgDots');
+        let msgTimer = null;
+
+        function getVisibleCount() {
+            if (window.innerWidth <= 640) return 1;
+            if (window.innerWidth <= 1024) return 2;
+            return 3;
+        }
+
+        function getMaxIndex() {
+            const totalCards = msgTrack ? msgTrack.children.length : 5;
+            const visible = getVisibleCount();
+            return Math.max(0, totalCards - visible);
+        }
+
+        function updateDots() {
+            if (!msgDots) return;
+            const maxIdx = getMaxIndex();
+            msgDots.innerHTML = '';
+            for (let i = 0; i <= maxIdx; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'dot-btn' + (i === currentMsgIndex ? ' active' : '');
+                btn.setAttribute('aria-label', `Slide ${i + 1}`);
+                btn.addEventListener('click', () => {
+                    currentMsgIndex = i;
+                    updateCarousel();
+                    resetMsgTimer();
+                });
+                msgDots.appendChild(btn);
+            }
+        }
+
+        function updateCarousel() {
+            if (!msgTrack || msgTrack.children.length === 0) return;
+            const maxIdx = getMaxIndex();
+            if (currentMsgIndex > maxIdx) currentMsgIndex = maxIdx;
+            if (currentMsgIndex < 0) currentMsgIndex = 0;
+
+            const card = msgTrack.children[0];
+            const cardWidth = card.offsetWidth;
+            const gap = parseFloat(window.getComputedStyle(msgTrack).gap) || 24;
+            const moveAmount = currentMsgIndex * (cardWidth + gap);
+            msgTrack.style.transform = `translateX(-${moveAmount}px)`;
+
+            const allDots = msgDots ? msgDots.querySelectorAll('.dot-btn') : [];
+            allDots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentMsgIndex);
+            });
+        }
+
+        if (msgPrevBtn && msgNextBtn) {
+            msgPrevBtn.addEventListener('click', () => {
+                const maxIdx = getMaxIndex();
+                currentMsgIndex = (currentMsgIndex <= 0) ? maxIdx : currentMsgIndex - 1;
+                updateCarousel();
+                resetMsgTimer();
+            });
+            msgNextBtn.addEventListener('click', () => {
+                const maxIdx = getMaxIndex();
+                currentMsgIndex = (currentMsgIndex >= maxIdx) ? 0 : currentMsgIndex + 1;
+                updateCarousel();
+                resetMsgTimer();
+            });
+        }
+
+        function startMsgTimer() {
+            msgTimer = setInterval(() => {
+                const maxIdx = getMaxIndex();
+                currentMsgIndex = (currentMsgIndex >= maxIdx) ? 0 : currentMsgIndex + 1;
+                updateCarousel();
+            }, 6000);
+        }
+
+        function resetMsgTimer() {
+            clearInterval(msgTimer);
+            startMsgTimer();
+        }
+
+        const sliderWrapper = document.querySelector('.messages-slider-wrapper');
+        if (sliderWrapper) {
+            sliderWrapper.addEventListener('mouseenter', () => clearInterval(msgTimer));
+            sliderWrapper.addEventListener('mouseleave', () => startMsgTimer());
+        }
+
+        window.addEventListener('resize', () => {
+            updateDots();
+            updateCarousel();
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDots();
+            updateCarousel();
+            startMsgTimer();
+        });
+        updateDots();
+        updateCarousel();
+        startMsgTimer();
+    </script>
+</body>
+
+</html>
