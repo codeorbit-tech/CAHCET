@@ -1,0 +1,344 @@
+/* ==========================================================================
+   CAHCET WELCOME / ENTRANCE SCREEN STYLESHEET
+   Quiet Luxury + Academic Institution + Modern Engineering College
+   ========================================================================== */
+
+:root {
+    --bg-dark: #020712;
+    --gold: #e5a823;
+    --gold-light: rgba(229, 168, 35, 0.15);
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Merriweather', Georgia, serif;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--bg-dark);
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================= BACKGROUND MEDIA LAYER ================= */
+.welcome-bg-media {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.welcome-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: brightness(0.65) contrast(1.1);
+    transform: scale(1.05);
+    animation: kenBurns 25s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    from {
+        transform: scale(1.05);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(2, 7, 18, 0.88) 0%,
+        rgba(2, 7, 18, 0.76) 45%,
+        rgba(2, 7, 18, 0.94) 100%
+    );
+    z-index: 2;
+}
+
+/* ================= MAIN SCREEN CONTAINER ================= */
+.welcome-screen {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+}
+
+.welcome-container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ================= INSTITUTION LOGO ================= */
+.welcome-logo-wrap {
+    margin-bottom: 1.25rem;
+}
+
+.welcome-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 3px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.welcome-logo-wrap:hover .welcome-logo {
+    transform: scale(1.06);
+}
+
+/* ================= SUBTLE GOLD ACCENT LINE ================= */
+.welcome-accent-line {
+    width: 36px;
+    height: 2px;
+    background-color: var(--gold);
+    border-radius: 1px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 8px rgba(229, 168, 35, 0.4);
+}
+
+/* ================= TYPOGRAPHY ================= */
+
+/* Eyebrow: WELCOME TO */
+.welcome-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+}
+
+/* Main College Name */
+.welcome-title {
+    font-family: var(--font-main);
+    font-size: clamp(1.75rem, 4vw, 3.1rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    transition: letter-spacing 0.5s ease, color 0.4s ease, text-shadow 0.4s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.welcome-title-highlight {
+    color: #ffffff;
+    transition: color 0.4s ease;
+}
+
+/* Hover Interaction on College Name */
+.welcome-title:hover {
+    letter-spacing: 2.2px;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+}
+
+.welcome-title:hover .welcome-title-highlight {
+    color: var(--gold);
+}
+
+/* Tagline: "Enter to Learn, Leave to Serve" */
+.welcome-tagline {
+    font-family: var(--font-serif);
+    font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 3.2rem;
+    max-width: 600px;
+}
+
+/* ================= EXPLORE BUTTON ================= */
+.welcome-action {
+    display: flex;
+    justify-content: center;
+}
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: rgba(4, 15, 34, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--text-primary);
+    padding: 0.85rem 2.75rem;
+    border-radius: 4px;
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-btn:hover,
+.explore-btn:focus-visible {
+    border-color: var(--gold);
+    color: #ffffff;
+    background-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(229, 168, 35, 0.15);
+    outline: none;
+}
+
+.explore-btn:active {
+    transform: translateY(0);
+}
+
+/* ================= ENTRANCE SEQUENTIAL ANIMATIONS ================= */
+.animate-item {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: welcomeFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Background Animation */
+.welcome-bg-media {
+    opacity: 0;
+    animation: welcomeBgFade 0.6s ease-out forwards;
+}
+
+@keyframes welcomeBgFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes welcomeFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation Delays (Precision Timing) */
+.animate-item.delay-1 {
+    animation-delay: 200ms;
+}
+
+.animate-item.delay-2 {
+    animation-delay: 400ms;
+}
+
+.animate-item.delay-3 {
+    animation-delay: 700ms;
+}
+
+.animate-item.delay-4 {
+    animation-delay: 1100ms;
+}
+
+.animate-item.delay-5 {
+    animation-delay: 1500ms;
+}
+
+/* ================= ACCESSIBILITY: REDUCED MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+    .animate-item,
+    .welcome-bg-media {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .welcome-title,
+    .explore-btn,
+    .welcome-logo {
+        transition: none !important;
+    }
+}
+
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+@media (max-width: 768px) {
+    .welcome-screen {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .welcome-logo {
+        width: 62px;
+        height: 62px;
+    }
+
+    .welcome-eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+    }
+
+    .welcome-title {
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+    }
+
+    .welcome-tagline {
+        margin-bottom: 2.5rem;
+    }
+
+    .explore-btn {
+        padding: 0.8rem 2.2rem;
+        font-size: 0.82rem;
+        letter-spacing: 2.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-accent-line {
+        margin-bottom: 1.5rem;
+    }
+
+    .welcome-eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 2.5px;
+    }
+
+    .welcome-title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .welcome-tagline {
+        font-size: 0.9rem;
+    }
+}
