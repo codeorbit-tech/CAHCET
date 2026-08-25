@@ -643,6 +643,35 @@
                     </select>
                     <span class="error-msg" id="courseError"></span>
                 </div>
+
+                <!-- Cut-Off Calculator Section -->
+                <div class="cutoff-section">
+                    <label class="cutoff-section-title">12th Marks &amp; Cut-Off Calculator (Optional)</label>
+                    <div class="form-row form-row-three">
+                        <div class="form-group">
+                            <label for="maths">Maths (/100)</label>
+                            <input type="number" id="maths" name="maths" min="0" max="100" placeholder="e.g. 95">
+                            <span class="error-msg" id="mathsError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="physics">Physics (/100)</label>
+                            <input type="number" id="physics" name="physics" min="0" max="100" placeholder="e.g. 90">
+                            <span class="error-msg" id="physicsError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="chemistry">Chemistry (/100)</label>
+                            <input type="number" id="chemistry" name="chemistry" min="0" max="100" placeholder="e.g. 88">
+                            <span class="error-msg" id="chemistryError"></span>
+                        </div>
+                    </div>
+                    <div class="cutoff-action-row">
+                        <button type="button" class="btn-cutoff" id="calcCutoffBtn">Know Your Cut-Off</button>
+                        <div class="cutoff-result" id="cutoffResult" style="display: none;">
+                            <span>Engineering Cut-Off: </span><strong id="cutoffValue">0.00</strong> / 200
+                        </div>
+                    </div>
+                    <span class="error-msg cutoff-global-error" id="cutoffGlobalError"></span>
+                </div>
                 <div class="form-group">
                     <label for="message">Queries / Remarks (Optional)</label>
                     <textarea id="message" name="message" rows="2"
@@ -713,6 +742,10 @@
                 document.querySelectorAll('.error-msg').forEach(el => {
                     el.textContent = '';
                 });
+                const cutoffResult = document.getElementById('cutoffResult');
+                const cutoffGlobalError = document.getElementById('cutoffGlobalError');
+                if (cutoffResult) cutoffResult.style.display = 'none';
+                if (cutoffGlobalError) cutoffGlobalError.textContent = '';
             }
         }
 
@@ -848,6 +881,112 @@
         if (courseSelect) {
             courseSelect.addEventListener('change', validateCourse);
         }
+
+        // ================= 12TH MARKS & CUT-OFF CALCULATOR (Task 7 Requirement) =================
+        const mathsInput = document.getElementById('maths');
+        const physicsInput = document.getElementById('physics');
+        const chemistryInput = document.getElementById('chemistry');
+        const calcCutoffBtn = document.getElementById('calcCutoffBtn');
+        const cutoffResult = document.getElementById('cutoffResult');
+        const cutoffValue = document.getElementById('cutoffValue');
+        const cutoffGlobalError = document.getElementById('cutoffGlobalError');
+
+        function calculateCutoff() {
+            // Reset previous cutoff errors
+            [mathsInput, physicsInput, chemistryInput].forEach(inp => {
+                if (inp) {
+                    const group = inp.closest('.form-group');
+                    if (group) group.classList.remove('has-error', 'has-success');
+                }
+            });
+            const mathsErr = document.getElementById('mathsError');
+            const physicsErr = document.getElementById('physicsError');
+            const chemistryErr = document.getElementById('chemistryError');
+            if (mathsErr) mathsErr.textContent = '';
+            if (physicsErr) physicsErr.textContent = '';
+            if (chemistryErr) chemistryErr.textContent = '';
+            if (cutoffGlobalError) cutoffGlobalError.textContent = '';
+            if (cutoffResult) cutoffResult.style.display = 'none';
+
+            try {
+                const mVal = mathsInput ? mathsInput.value.trim() : '';
+                const pVal = physicsInput ? physicsInput.value.trim() : '';
+                const cVal = chemistryInput ? chemistryInput.value.trim() : '';
+
+                // Exception 1: Empty mark input
+                if (mVal === '' || pVal === '' || cVal === '') {
+                    if (mVal === '' && mathsInput) setFieldError(mathsInput, 'mathsError', 'Required');
+                    if (pVal === '' && physicsInput) setFieldError(physicsInput, 'physicsError', 'Required');
+                    if (cVal === '' && chemistryInput) setFieldError(chemistryInput, 'chemistryError', 'Required');
+                    throw new Error('Please enter marks for Mathematics, Physics, and Chemistry');
+                }
+
+                const m = Number(mVal);
+                const p = Number(pVal);
+                const c = Number(cVal);
+
+                // Exception 2: Non-numeric input
+                if (isNaN(m) || isNaN(p) || isNaN(c)) {
+                    throw new TypeError('Marks must be valid numbers');
+                }
+
+                // Exception 3: Out of range (0 - 100)
+                if (m < 0 || m > 100) {
+                    if (mathsInput) setFieldError(mathsInput, 'mathsError', 'Must be 0–100');
+                    throw new RangeError('Maths mark must be between 0 and 100');
+                }
+                if (p < 0 || p > 100) {
+                    if (physicsInput) setFieldError(physicsInput, 'physicsError', 'Must be 0–100');
+                    throw new RangeError('Physics mark must be between 0 and 100');
+                }
+                if (c < 0 || c > 100) {
+                    if (chemistryInput) setFieldError(chemistryInput, 'chemistryError', 'Must be 0–100');
+                    throw new RangeError('Chemistry mark must be between 0 and 100');
+                }
+
+                // Formula: Cut Off = Maths + (Physics / 2) + (Chemistry / 2)
+                const cutoff = m + (p / 2) + (c / 2);
+
+                if (cutoffValue && cutoffResult) {
+                    cutoffValue.textContent = cutoff.toFixed(2);
+                    cutoffResult.style.display = 'inline-block';
+                }
+
+                [mathsInput, physicsInput, chemistryInput].forEach(inp => {
+                    if (inp) {
+                        const group = inp.closest('.form-group');
+                        if (group) group.classList.add('has-success');
+                    }
+                });
+
+                return cutoff;
+
+            } catch (error) {
+                // Catch exception and display user-friendly error message
+                console.warn('Cut-off Exception Caught:', error.name, '-', error.message);
+                if (cutoffGlobalError) {
+                    cutoffGlobalError.textContent = error.message;
+                }
+                return null;
+            }
+        }
+
+        if (calcCutoffBtn) {
+            calcCutoffBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                calculateCutoff();
+            });
+        }
+
+        // Live input restriction for mark fields
+        [mathsInput, physicsInput, chemistryInput].forEach(inp => {
+            if (inp) {
+                inp.addEventListener('input', () => {
+                    if (parseFloat(inp.value) > 100) inp.value = 100;
+                    if (parseFloat(inp.value) < 0) inp.value = 0;
+                });
+            }
+        });
 
         // Bind admissions hash links to open the enquiry modal
         document.querySelectorAll('a[href="#admissions"], .btn-admissions').forEach(el => {
