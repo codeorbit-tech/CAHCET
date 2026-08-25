@@ -442,6 +442,41 @@ ul {
     font-weight: 500;
 }
 
+/* Page Content Search Filtering */
+.search-hidden {
+    display: none !important;
+}
+
+.search-no-page-results {
+    display: none;
+    text-align: center;
+    padding: 8rem 2rem 6rem 2rem;
+    color: var(--text-secondary, #94a3b8);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 55vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-no-page-results.active {
+    display: flex;
+}
+
+.search-no-page-results h3 {
+    color: var(--heading-color, #ffffff);
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.search-no-page-results p {
+    font-size: 0.95rem;
+    color: var(--text-muted, #94a3b8);
+    max-width: 520px;
+    line-height: 1.6;
+}
+
 /* Mobile Toggle */
 .mobile-btn {
     display: none;

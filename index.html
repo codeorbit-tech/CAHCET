@@ -504,6 +504,12 @@
             </div>
         </section>
 
+        <!-- No Results Message for Page Search Filtering -->
+        <div class="search-no-page-results" id="searchNoPageResults" aria-live="polite">
+            <h3 id="noResultsTitle">No matching content found</h3>
+            <p id="noResultsDesc">Try searching for keywords like about, academics, courses, placements, campus, principal, or contact.</p>
+        </div>
+
     </main>
 
     <!-- ================= FOOTER ================= -->
@@ -1083,7 +1089,7 @@
             });
         }
 
-        // ================= NAVBAR SEARCH FUNCTIONALITY =================
+        // ================= NAVBAR SEARCH & CONTENT FILTERING =================
         const SEARCH_DATA = [
             {
                 title: "About",
@@ -1107,7 +1113,7 @@
             },
             {
                 title: "Admissions",
-                sectionId: "admissions",
+                sectionId: "contact",
                 isAdmissions: true,
                 keywords: ["admissions", "admission", "apply", "enquiry", "enquire", "join", "eligibility", "scholarship", "fees", "degree"]
             },
@@ -1128,6 +1134,71 @@
         const searchInput = document.getElementById('searchInput');
         const searchResultsList = document.getElementById('searchResultsList');
         const searchBoxWrapper = document.getElementById('searchBoxWrapper');
+        const pageSections = document.querySelectorAll('#main-content > section');
+        const noPageResultsEl = document.getElementById('searchNoPageResults');
+
+        function filterPageContent(query) {
+            const q = query.trim().toLowerCase();
+
+            // When search is cleared, make all page content visible again
+            if (!q) {
+                pageSections.forEach(sec => sec.classList.remove('search-hidden'));
+                if (noPageResultsEl) noPageResultsEl.classList.remove('active');
+                return;
+            }
+
+            let matchCount = 0;
+
+            pageSections.forEach(sec => {
+                const secId = sec.id ? sec.id.toLowerCase() : '';
+                const secText = (sec.innerText || sec.textContent || '').toLowerCase();
+                let isMatch = false;
+
+                // 1. Text content match
+                if (secText.includes(q)) {
+                    isMatch = true;
+                }
+
+                // 2. ID match
+                if (secId.includes(q)) {
+                    isMatch = true;
+                }
+
+                // 3. Keyword / Topic association match
+                const matchingData = SEARCH_DATA.filter(item => {
+                    if (item.sectionId.toLowerCase() === secId) return true;
+                    if (secId === 'about' && (item.title === 'Academics' || item.title === 'Facilities')) return true;
+                    if (secId === 'contact' && item.title === 'Admissions') return true;
+                    return false;
+                });
+
+                matchingData.forEach(item => {
+                    if (item.title.toLowerCase().includes(q)) isMatch = true;
+                    if (item.keywords.some(k => k.toLowerCase().includes(q) || q.includes(k.toLowerCase()))) {
+                        isMatch = true;
+                    }
+                });
+
+                // Apply visibility
+                if (isMatch) {
+                    sec.classList.remove('search-hidden');
+                    matchCount++;
+                } else {
+                    sec.classList.add('search-hidden');
+                }
+            });
+
+            // If no content matches, show the fallback message
+            if (noPageResultsEl) {
+                if (matchCount === 0) {
+                    noPageResultsEl.classList.add('active');
+                    const title = document.getElementById('noResultsTitle');
+                    if (title) title.textContent = `No matching content found for "${query.trim()}"`;
+                } else {
+                    noPageResultsEl.classList.remove('active');
+                }
+            }
+        }
 
         function getMatchingResults(query) {
             const q = query.trim().toLowerCase();
@@ -1153,6 +1224,7 @@
             if (searchInput) {
                 searchInput.focus();
                 const query = searchInput.value;
+                filterPageContent(query);
                 renderSearchResults(getMatchingResults(query), query);
             }
         }
@@ -1176,7 +1248,7 @@
 
         function navigateToSearchResult(item) {
             closeSearch();
-            if (item.isAdmissions || item.title === "Admissions" || item.sectionId === "admissions") {
+            if (item.isAdmissions || item.title === "Admissions") {
                 if (typeof openModal === 'function') {
                     openModal();
                     return;
@@ -1247,6 +1319,7 @@
         if (searchInput) {
             searchInput.addEventListener('input', () => {
                 const query = searchInput.value;
+                filterPageContent(query);
                 const matches = getMatchingResults(query);
                 renderSearchResults(matches, query);
             });
@@ -1265,6 +1338,10 @@
         // Close search on Escape key press
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && searchDropdown && searchDropdown.classList.contains('active')) {
+                if (searchInput && searchInput.value) {
+                    searchInput.value = '';
+                    filterPageContent('');
+                }
                 closeSearch();
             }
         });
