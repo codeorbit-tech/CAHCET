@@ -15,6 +15,19 @@
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Theme Initializer (Avoids flash of unstyled content) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -100,13 +113,35 @@
                     </li>
                 </ul>
 
-                <!-- Search Button -->
-                <button class="search-btn" id="searchBtn" title="Search">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
+                <div class="nav-actions">
+                    <!-- Search Button -->
+                    <button class="search-btn" id="searchBtn" title="Search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+
+                    <!-- Theme Toggle Button -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme">
+                        <!-- Sun Icon -->
+                        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Moon Icon -->
+                        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
             </nav>
 
         </div>
@@ -337,111 +372,7 @@
                     <!-- Carousel Viewport -->
                     <div class="messages-carousel-viewport">
                         <div class="messages-track" id="msgTrack">
-
-                            <!-- Card 1: Chairman (t3) -->
-                            <div class="testimonial-card">
-                                <div class="testi-card-header">
-                                    <div class="testi-portrait-frame">
-                                        <img src="assets/t3.webp" alt="Dr. S. Ziauddin Ahmed"
-                                            class="testi-portrait-img">
-                                    </div>
-                                    <h3 class="testi-author-name">Dr. S. Ziauddin Ahmed, B.A.</h3>
-                                    <span class="testi-author-role">Chairman</span>
-                                    <hr class="testi-divider">
-                                </div>
-                                <div class="testi-card-body">
-                                    <p class="testi-quote-text">
-                                        “C. Abdul Hakeem College of Engineering and Technology (CAHCET), established in
-                                        1919, is committed to providing quality engineering education and preparing
-                                        students for successful careers. With ISO Certification and NBA accreditation,
-                                        CAHCET focuses on practical, job-oriented education, creative thinking, critical
-                                        thinking, and overall student development.”
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Card 2: Correspondent (t4) -->
-                            <div class="testimonial-card">
-                                <div class="testi-card-header">
-                                    <div class="testi-portrait-frame">
-                                        <img src="assets/t4.jpg" alt="V. Mohamed Rizwanullah"
-                                            class="testi-portrait-img">
-                                    </div>
-                                    <h3 class="testi-author-name">V. Mohamed Rizwanullah, M.B.A.</h3>
-                                    <span class="testi-author-role">Correspondent</span>
-                                    <hr class="testi-divider">
-                                </div>
-                                <div class="testi-card-body">
-                                    <p class="testi-quote-text">
-                                        “CAHCET believes that education inspires creativity, critical thinking, and
-                                        prepares students for a promising future. With ISO Certification and NBA
-                                        accreditation, the institution is committed to providing high-quality,
-                                        industry-relevant engineering education. Students are trained with strong values
-                                        of sincerity, discipline, hard work, and integrity.”
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Card 3: Principal (t5) -->
-                            <div class="testimonial-card">
-                                <div class="testi-card-header">
-                                    <div class="testi-portrait-frame">
-                                        <img src="assets/t5.webp" alt="Dr. M. Sasikumar" class="testi-portrait-img">
-                                    </div>
-                                    <h3 class="testi-author-name">Dr. M. Sasikumar</h3>
-                                    <span class="testi-author-role">Principal</span>
-                                    <hr class="testi-divider">
-                                </div>
-                                <div class="testi-card-body">
-                                    <p class="testi-quote-text">
-                                        “Education transforms our thoughts, values, and actions. At CAHCET, we aim to
-                                        nurture skilled technocrats with professional competence, soft skills, human
-                                        values, and ethics. We strive to provide holistic education that encourages
-                                        innovation and broadens students’ horizons.”
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Card 4: Alumni 1 (t1) -->
-                            <div class="testimonial-card">
-                                <div class="testi-card-header">
-                                    <div class="testi-portrait-frame">
-                                        <img src="assets/t1.webp" alt="Gori Mohammed" class="testi-portrait-img">
-                                    </div>
-                                    <h3 class="testi-author-name">Gori Mohammed</h3>
-                                    <span class="testi-author-role">Alumni</span>
-                                    <hr class="testi-divider">
-                                </div>
-                                <div class="testi-card-body">
-                                    <p class="testi-quote-text">
-                                        “I respect and love my correspondent who shaped my life, became my inspiration,
-                                        reason for my growth and many other things. I wanted to receive my degree from
-                                        his hands but received in his presence. If he was not there, I wouldn’t have
-                                        completed my engineering. I thank Almighty for showing him in my life.”
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Card 5: Alumni 2 (t2) -->
-                            <div class="testimonial-card">
-                                <div class="testi-card-header">
-                                    <div class="testi-portrait-frame">
-                                        <img src="assets/t2.webp" alt="Nadeem A" class="testi-portrait-img">
-                                    </div>
-                                    <h3 class="testi-author-name">Nadeem A</h3>
-                                    <span class="testi-author-role">Alumni</span>
-                                    <hr class="testi-divider">
-                                </div>
-                                <div class="testi-card-body">
-                                    <p class="testi-quote-text">
-                                        “Thanks for providing the opportunity for an average academic student to study
-                                        engineering degree. I’m sharing the same desk at work with students of top 10
-                                        colleges, consulting top clients in different geographies. In my view this is
-                                        the real achievement which CAHCET is achieving year on year.”
-                                    </p>
-                                </div>
-                            </div>
-
+                            <!-- Dynamically populated via JSON (JavaScript) -->
                         </div>
                     </div>
 
@@ -810,6 +741,69 @@
         }
 
         // ================= PEOPLE'S MESSAGES 3-CARD CAROUSEL =================
+        // JSON-Based Testimonials Data (Task 8 requirement)
+        const testimonialsJSON = `[
+            {
+                "name": "Dr. S. Ziauddin Ahmed, B.A.",
+                "role": "Chairman",
+                "image": "assets/t3.webp",
+                "quote": "“C. Abdul Hakeem College of Engineering and Technology (CAHCET), established in 1919, is committed to providing quality engineering education and preparing students for successful careers. With ISO Certification and NBA accreditation, CAHCET focuses on practical, job-oriented education, creative thinking, critical thinking, and overall student development.”"
+            },
+            {
+                "name": "V. Mohamed Rizwanullah, M.B.A.",
+                "role": "Correspondent",
+                "image": "assets/t4.jpg",
+                "quote": "“CAHCET believes that education inspires creativity, critical thinking, and prepares students for a promising future. With ISO Certification and NBA accreditation, the institution is committed to providing high-quality, industry-relevant engineering education. Students are trained with strong values of sincerity, discipline, hard work, and integrity.”"
+            },
+            {
+                "name": "Dr. M. Sasikumar",
+                "role": "Principal",
+                "image": "assets/t5.webp",
+                "quote": "“Education transforms our thoughts, values, and actions. At CAHCET, we aim to nurture skilled technocrats with professional competence, soft skills, human values, and ethics. We strive to provide holistic education that encourages innovation and broadens students’ horizons.”"
+            },
+            {
+                "name": "Gori Mohammed",
+                "role": "Alumni",
+                "image": "assets/t1.webp",
+                "quote": "“I respect and love my correspondent who shaped my life, became my inspiration, reason for my growth and many other things. I wanted to receive my degree from his hands but received in his presence. If he was not there, I wouldn’t have completed my engineering. I thank Almighty for showing him in my life.”"
+            },
+            {
+                "name": "Nadeem A",
+                "role": "Alumni",
+                "image": "assets/t2.webp",
+                "quote": "“Thanks for providing the opportunity for an average academic student to study engineering degree. I’m sharing the same desk at work with students of top 10 colleges, consulting top clients in different geographies. In my view this is the real achievement which CAHCET is achieving year on year.”"
+            }
+        ]`;
+
+        const testimonials = JSON.parse(testimonialsJSON);
+
+        function renderTestimonials() {
+            const track = document.getElementById('msgTrack');
+            if (!track) return;
+            track.innerHTML = '';
+            testimonials.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'testimonial-card';
+                card.innerHTML = `
+                    <div class="testi-card-header">
+                        <div class="testi-portrait-frame">
+                            <img src="${item.image}" alt="${item.name}" class="testi-portrait-img">
+                        </div>
+                        <h3 class="testi-author-name">${item.name}</h3>
+                        <span class="testi-author-role">${item.role}</span>
+                        <hr class="testi-divider">
+                    </div>
+                    <div class="testi-card-body">
+                        <p class="testi-quote-text">${item.quote}</p>
+                    </div>
+                `;
+                track.appendChild(card);
+            });
+        }
+
+        // Render testimonials immediately on script parse
+        renderTestimonials();
+
         let currentMsgIndex = 0;
         const msgTrack = document.getElementById('msgTrack');
         const msgPrevBtn = document.getElementById('msgPrevBtn');
@@ -905,13 +899,26 @@
 
         // Initialize on load
         document.addEventListener('DOMContentLoaded', () => {
+            renderTestimonials();
             updateDots();
             updateCarousel();
             startMsgTimer();
         });
+        renderTestimonials();
         updateDots();
         updateCarousel();
         startMsgTimer();
+
+        // ================= THEME TOGGLE LISTENER =================
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
     </script>
 </body>
 
