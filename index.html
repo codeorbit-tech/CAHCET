@@ -26,6 +26,14 @@
             } else {
                 document.documentElement.setAttribute('data-theme', 'light');
             }
+
+            // Check if user navigated smoothly from welcome page
+            try {
+                if (sessionStorage.getItem('fromWelcomePage') === 'true') {
+                    document.documentElement.classList.add('welcome-fade-in');
+                    sessionStorage.removeItem('fromWelcomePage');
+                }
+            } catch (e) {}
         })();
     </script>
 </head>
